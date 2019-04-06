@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 
 import "./App.css";
-import SmurfForm from "./components/SmurfForm";
+import AddSmurfForm from "./components/AddSmurfForm";
 import UpdateSmurfForm from "./components/UpdateSmurfForm";
 import SingleSmurf from "./components/SingleSmurf";
 import Smurfs from "./components/Smurfs";
@@ -49,7 +49,7 @@ class App extends Component {
             exact
             path="/smurf-form"
             render={props => (
-              <SmurfForm {...props} updateSmurfs={this.updateSmurfs} />
+              <AddSmurfForm {...props} updateSmurfs={this.updateSmurfs} />
             )}
           />
           <Route
