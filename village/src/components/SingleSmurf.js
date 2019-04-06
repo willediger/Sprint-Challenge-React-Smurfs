@@ -90,7 +90,7 @@ const SingleSmurf = props => {
   let imgComponent = img ? (
     <img src={img} alt={smurf.name} height="100px" />
   ) : (
-    "No image for this smurf"
+    <span>No image for this smurf</span>
   );
   return (
     <SmurfContainerDiv>

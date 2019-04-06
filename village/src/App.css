@@ -50,3 +50,7 @@ main {
 .smurf-info {
   margin-left: 20px;
 }
+
+.smurf span {
+  width: 100px;
+}

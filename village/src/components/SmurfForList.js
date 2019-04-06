@@ -16,7 +16,7 @@ const SmurfForList = props => {
       {img ? (
         <img src={img} alt={props.name} height="100px" />
       ) : (
-        "No image for this smurf"
+        <span>No image for this smurf</span>
       )}
       <div className="smurf-info">
         <h3>{props.name}</h3>
