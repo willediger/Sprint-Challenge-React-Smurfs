@@ -16,3 +16,10 @@ a.active {
 .smurf-nav {
   margin-left: 10px;
 }
+
+.smurf-home {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}

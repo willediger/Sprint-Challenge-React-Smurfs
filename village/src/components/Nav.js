@@ -16,6 +16,9 @@ function Nav() {
     <nav>
       <SmurfsNav className="smurf-nav">
         <NavLink exact to="/">
+          Home
+        </NavLink>
+        <NavLink exact to="/smurfs">
           Smurf List
         </NavLink>
         <NavLink exact to="/smurf-form">

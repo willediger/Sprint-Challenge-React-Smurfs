@@ -4,6 +4,7 @@ import "./App.css";
 import SmurfForm from "./components/SmurfForm";
 import Smurfs from "./components/Smurfs";
 import Nav from "./components/Nav";
+import Home from "./components/Home";
 
 import { Route } from "react-router-dom";
 
@@ -35,9 +36,10 @@ class App extends Component {
     return (
       <div className="App">
         <Route path="/" component={Nav} />
+        <Route exact path="/" component={Home} />
         <Route
           exact
-          path="/"
+          path="/smurfs"
           render={props => <Smurfs {...props} smurfs={this.state.smurfs} />}
         />
         <Route
