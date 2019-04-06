@@ -24,6 +24,10 @@ a.active {
   justify-content: center;
 }
 
+.smurf-home img {
+  margin-bottom: 20px;
+}
+
 main {
   width: 40%;
   margin: 0 auto;
@@ -43,6 +47,6 @@ main {
   align-items: center;
 }
 
-.smurf img {
-  margin-right: 20px;
+.smurf-info {
+  margin-left: 20px;
 }
