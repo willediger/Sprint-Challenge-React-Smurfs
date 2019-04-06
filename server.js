@@ -42,7 +42,7 @@ let smurfs = [
 server.get("/smurfs", (req, res) => {
   res.json(smurfs);
 });
-let smurfId = 1;
+let smurfId = 4;
 
 server.post("/smurfs", (req, res) => {
   const { name, age, height } = req.body;
