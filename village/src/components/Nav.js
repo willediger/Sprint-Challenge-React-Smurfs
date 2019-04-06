@@ -21,7 +21,7 @@ function Nav() {
         <NavLink exact to="/smurfs">
           Smurf List
         </NavLink>
-        <NavLink exact to="/smurf-form">
+        <NavLink exact to="/add-smurf">
           Add Smurf
         </NavLink>
       </SmurfsNav>
