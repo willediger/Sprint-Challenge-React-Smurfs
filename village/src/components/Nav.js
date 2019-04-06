@@ -22,7 +22,7 @@ function Nav() {
           Smurf List
         </NavLink>
         <NavLink exact to="/smurf-form">
-          Add Smurfs
+          Add Smurf
         </NavLink>
       </SmurfsNav>
     </nav>
