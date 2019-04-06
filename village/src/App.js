@@ -34,6 +34,11 @@ class App extends Component {
       .catch(err => console.log(err));
   }
 
+  smurfImgFilename = name => {
+    let modifiedName = name.toLowerCase().replace(" ", "-");
+    return modifiedName + ".png";
+  };
+
   render() {
     return (
       <div className="App">
@@ -43,7 +48,13 @@ class App extends Component {
           <Route
             exact
             path="/smurfs"
-            render={props => <Smurfs {...props} smurfs={this.state.smurfs} />}
+            render={props => (
+              <Smurfs
+                {...props}
+                smurfs={this.state.smurfs}
+                smurfImgFilename={this.smurfImgFilename}
+              />
+            )}
           />
           <Route
             exact
@@ -60,6 +71,7 @@ class App extends Component {
                 {...props}
                 updateSmurfs={this.updateSmurfs}
                 smurfs={this.state.smurfs}
+                smurfImgFilename={this.smurfImgFilename}
               />
             )}
           />

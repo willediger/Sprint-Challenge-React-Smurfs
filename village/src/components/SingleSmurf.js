@@ -4,6 +4,8 @@ import styled from "styled-components";
 import axios from "axios";
 
 import pencil from "./pencil.png";
+import "../App.css";
+const images = require.context("./smurf-imgs", true);
 
 const SmurfContainerDiv = styled.div`
   display: flex;
@@ -13,7 +15,7 @@ const SmurfContainerDiv = styled.div`
 
 const SmurfDiv = styled.div`
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   border: 1px solid black;
   width: 100%;
   margin: 0;
@@ -78,6 +80,18 @@ const SingleSmurf = props => {
   if (!smurf) {
     return <h2>Loading smurf data...</h2>;
   }
+
+  let img;
+  try {
+    img = images(`./${props.smurfImgFilename(smurf.name)}`);
+  } catch (err) {
+    img = null;
+  }
+  let imgComponent = img ? (
+    <img src={img} alt={smurf.name} height="100px" />
+  ) : (
+    "No image for this smurf"
+  );
   return (
     <SmurfContainerDiv>
       <SmurfButtons>
@@ -85,10 +99,13 @@ const SingleSmurf = props => {
         <EditButton onClick={updateSmurf} src={pencil} alt="edit" />
       </SmurfButtons>
 
-      <SmurfDiv>
-        <P>Name: {smurf.name}</P>
-        <P>Age: {smurf.age}</P>
-        <P>Height: {smurf.height}</P>
+      <SmurfDiv className="smurf">
+        {imgComponent}
+        <div className="smurf-info">
+          <P>Name: {smurf.name}</P>
+          <P>Age: {smurf.age}</P>
+          <P>Height: {smurf.height}</P>
+        </div>
       </SmurfDiv>
     </SmurfContainerDiv>
   );
