@@ -2,6 +2,8 @@ import React, { Component } from "react";
 
 import "./App.css";
 import SmurfForm from "./components/SmurfForm";
+import UpdateSmurfForm from "./components/UpdateSmurfForm";
+import SingleSmurf from "./components/SingleSmurf";
 import Smurfs from "./components/Smurfs";
 import Nav from "./components/Nav";
 import Home from "./components/Home";
@@ -36,19 +38,42 @@ class App extends Component {
     return (
       <div className="App">
         <Route path="/" component={Nav} />
-        <Route exact path="/" component={Home} />
-        <Route
-          exact
-          path="/smurfs"
-          render={props => <Smurfs {...props} smurfs={this.state.smurfs} />}
-        />
-        <Route
-          exact
-          path="/smurf-form"
-          render={props => (
-            <SmurfForm {...props} updateSmurfs={this.updateSmurfs} />
-          )}
-        />
+        <main>
+          <Route exact path="/" component={Home} />
+          <Route
+            exact
+            path="/smurfs"
+            render={props => <Smurfs {...props} smurfs={this.state.smurfs} />}
+          />
+          <Route
+            exact
+            path="/smurf-form"
+            render={props => (
+              <SmurfForm {...props} updateSmurfs={this.updateSmurfs} />
+            )}
+          />
+          <Route
+            exact
+            path="/smurfs/:id"
+            render={props => (
+              <SingleSmurf
+                {...props}
+                updateSmurfs={this.updateSmurfs}
+                smurfs={this.state.smurfs}
+              />
+            )}
+          />
+          <Route
+            path="/smurfs/:id/update"
+            render={props => (
+              <UpdateSmurfForm
+                {...props}
+                updateSmurfs={this.updateSmurfs}
+                smurfs={this.state.smurfs}
+              />
+            )}
+          />
+        </main>
       </div>
     );
   }

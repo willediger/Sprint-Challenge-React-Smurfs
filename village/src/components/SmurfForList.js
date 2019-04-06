@@ -1,6 +1,6 @@
-import React from 'react';
+import React from "react";
 
-const Smurf = props => {
+const SmurfForList = props => {
   return (
     <div className="Smurf">
       <h3>{props.name}</h3>
@@ -10,11 +10,10 @@ const Smurf = props => {
   );
 };
 
-Smurf.defaultProps = {
-  name: '',
-  height: '',
-  age: ''
+SmurfForList.defaultProps = {
+  name: "",
+  height: "",
+  age: ""
 };
 
-export default Smurf;
-
+export default SmurfForList;
